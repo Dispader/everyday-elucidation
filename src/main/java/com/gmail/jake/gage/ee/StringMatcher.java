@@ -23,12 +23,23 @@ public class StringMatcher
     }
     
     /**
-     * Returns <code>true</code> if the given input string heuristically positive in nature.
+     * Returns <code>true</code> if the given input string is heuristically positive in nature.
      * 
      * @param input an input <code>String</code>
-     * @return <code>true</code> if the string heuristically matches "true"
+     * @return <code>true</code> if the string is heuristically positive in nature.
      */
     public static boolean isPositive(String input) {
         return input.matches("[Tt]rue|[Yy]es");
     }
+    
+    /**
+     * Returns <code>true</code> if the given input string contains exactly the string "true".
+     * 
+     * @param input an input <code>String</code>
+     * @return <code>true</code> if the string contains "true".
+     */
+    public static boolean containsTrue(String input) {
+        return input.matches(".*true.*");
+    }
+
 }

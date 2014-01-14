@@ -38,4 +38,8 @@ class StringMatcherSpec extends Specification
     def "isPositive(\"no\") == false"() {
         expect: StringMatcher.isPositive("no") == false
     }
+    
+    def "containsTrue(\"thetruewithin\") == true"() {
+        expect: StringMatcher.containsTrue("thetruewithin") == true
+    }
 }
