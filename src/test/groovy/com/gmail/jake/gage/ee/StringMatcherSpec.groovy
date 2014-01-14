@@ -49,4 +49,17 @@ class StringMatcherSpec extends Specification
     def "isThreeLetters(\"abcd\") == false"() {
         expect: StringMatcher.isThreeLetters("abcd") == false
     }
+    
+    def "doesNotBeginWithNumber(\"abc\") == true"() {
+        expect: StringMatcher.doesNotBeginWithNumber("abc") == true
+    }
+    def "doesNotBeginWithNumber(\"1abcd\") == true"() {
+        expect: StringMatcher.doesNotBeginWithNumber("1abcd") == false
+    }
+    def "doesNotBeginWithNumber(\"a1bcd\") == true"() {
+        expect: StringMatcher.doesNotBeginWithNumber("a1bcd") == true
+    }
+    def "doesNotBeginWithNumber(\"asdfdsf\") == true"() {
+        expect: StringMatcher.doesNotBeginWithNumber("asdfdsf") == true
+    }
 }
