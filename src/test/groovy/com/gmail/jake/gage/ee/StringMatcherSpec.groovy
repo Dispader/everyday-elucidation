@@ -1,5 +1,7 @@
 package com.gmail.jake.gage.ee
 
+import com.sun.beans.decoder.FalseElementHandler;
+
 import spock.lang.Specification;
 
 class StringMatcherSpec extends Specification
@@ -22,5 +24,18 @@ class StringMatcherSpec extends Specification
     }
     def "isTrue(\"True\") == false"() {
         expect: StringMatcher.isTrue("True") ==  true
+    }
+    
+    def "isPositive(\"true\") == true"() {
+        expect: StringMatcher.isPositive("true") == true
+    }
+    def "isPositive(\"yes\") == true"() {
+        expect: StringMatcher.isPositive("yes") == true
+    }
+    def "isPositive(\"Yes\") == true"() {
+        expect: StringMatcher.isPositive("Yes") == true
+    }
+    def "isPositive(\"no\") == false"() {
+        expect: StringMatcher.isPositive("no") == false
     }
 }

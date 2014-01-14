@@ -21,4 +21,14 @@ public class StringMatcher
     public static boolean isTrue(String input) {
         return input.matches("[Tt]rue");
     }
+    
+    /**
+     * Returns <code>true</code> if the given input string heuristically positive in nature.
+     * 
+     * @param input an input <code>String</code>
+     * @return <code>true</code> if the string heuristically matches "true"
+     */
+    public static boolean isPositive(String input) {
+        return input.matches("[Tt]rue|[Yy]es");
+    }
 }
