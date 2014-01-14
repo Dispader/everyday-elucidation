@@ -41,5 +41,14 @@ public class StringMatcher
     public static boolean containsTrue(String input) {
         return input.matches(".*true.*");
     }
-
+    
+    /**
+     * Returns <code>true</code> if the given input string contains exactly three alphabetical characters.
+     * 
+     * @param input an input <code>String</code>
+     * @return <code>true</code> if the string contains exactly three alphabetical characters.
+     */
+    public static boolean isThreeLetters(String input) {
+        return input.matches("[a-zA-Z]{3}");
+    }
 }

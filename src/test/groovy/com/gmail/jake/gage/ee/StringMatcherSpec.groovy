@@ -42,4 +42,11 @@ class StringMatcherSpec extends Specification
     def "containsTrue(\"thetruewithin\") == true"() {
         expect: StringMatcher.containsTrue("thetruewithin") == true
     }
+    
+    def "isThreeLetters(\"abc\") == true"() {
+        expect: StringMatcher.isThreeLetters("abc") == true
+    }
+    def "isThreeLetters(\"abcd\") == false"() {
+        expect: StringMatcher.isThreeLetters("abcd") == false
+    }
 }
