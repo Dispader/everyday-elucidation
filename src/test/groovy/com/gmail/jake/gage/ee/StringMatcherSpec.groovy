@@ -22,7 +22,7 @@ class StringMatcherSpec extends Specification
     def "isTrue(\"true2\") == false"() {
         expect: StringMatcher.isTrue("true2") ==  false
     }
-    def "isTrue(\"True\") == false"() {
+    def "isTrue(\"True\") == true"() {
         expect: StringMatcher.isTrue("True") ==  true
     }
     
@@ -53,7 +53,7 @@ class StringMatcherSpec extends Specification
     def "doesNotBeginWithNumber(\"abc\") == true"() {
         expect: StringMatcher.doesNotBeginWithNumber("abc") == true
     }
-    def "doesNotBeginWithNumber(\"1abcd\") == true"() {
+    def "doesNotBeginWithNumber(\"1abcd\") == false"() {
         expect: StringMatcher.doesNotBeginWithNumber("1abcd") == false
     }
     def "doesNotBeginWithNumber(\"a1bcd\") == true"() {
@@ -66,10 +66,29 @@ class StringMatcherSpec extends Specification
     def "doesNotContainB(\"1\") == true"() {
         expect: StringMatcher.doesNotContainB("1") == true
     }
-    def "doesNotContainB(\"abcksdfkdskfsdfdsf\") == true"() {
+    def "doesNotContainB(\"abcksdfkdskfsdfdsf\") == false"() {
         expect: StringMatcher.doesNotContainB("abcksdfkdskfsdfdsf") == false
     }
     def "doesNotContainB(\"skdskfjsmcnxmvjwque484242\") == true"() {
         expect: StringMatcher.doesNotContainB("skdskfjsmcnxmvjwque484242") == true
+    }
+    
+    def "lessThanThreeHundred(\"288\") == true"() {
+        expect: StringMatcher.lessThanThreeHundred("288") == true
+    }
+    def "lessThanThreeHundred(\"3288\") == false"() {
+        expect: StringMatcher.lessThanThreeHundred("3288") == false
+    }
+    def "lessThanThreeHundred(\"328 8\" == false)"() {
+        expect: StringMatcher.lessThanThreeHundred("328 8") == false
+    }
+    def "lessThanThreeHundred(\"1\") == true"() {
+        expect: StringMatcher.lessThanThreeHundred("1") == true
+    }
+    def "lessThanThreeHundred(\"99\") == true"() {
+        expect: StringMatcher.lessThanThreeHundred("99") == true
+    }
+    def "lessThanThreeHundred(\"300\") == false"() {
+        expect: StringMatcher.lessThanThreeHundred("300") == false
     }
 }
