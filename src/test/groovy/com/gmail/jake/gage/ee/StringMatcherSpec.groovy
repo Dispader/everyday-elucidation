@@ -62,4 +62,14 @@ class StringMatcherSpec extends Specification
     def "doesNotBeginWithNumber(\"asdfdsf\") == true"() {
         expect: StringMatcher.doesNotBeginWithNumber("asdfdsf") == true
     }
+    
+    def "doesNotContainB(\"1\") == true"() {
+        expect: StringMatcher.doesNotContainB("1") == true
+    }
+    def "doesNotContainB(\"abcksdfkdskfsdfdsf\") == true"() {
+        expect: StringMatcher.doesNotContainB("abcksdfkdskfsdfdsf") == false
+    }
+    def "doesNotContainB(\"skdskfjsmcnxmvjwque484242\") == true"() {
+        expect: StringMatcher.doesNotContainB("skdskfjsmcnxmvjwque484242") == true
+    }
 }

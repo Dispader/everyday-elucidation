@@ -61,4 +61,16 @@ public class StringMatcher
     public static boolean doesNotBeginWithNumber(String input) {
         return input.matches("^[^\\d].*");
     }
+    
+    /**
+     * Returns <code>true</code> if the given input string does not contain 'b'.
+     * <p>
+     * This method is present to demonstrate a basic regular expression intersection operation.
+     * 
+     * @param input an input <code>String</code>
+     * @return <code>true</code> if the string does not contain 'b'
+     */
+    public static boolean doesNotContainB(String input) {
+        return input.matches("([\\w&&[^b]])*");
+    }
 }
