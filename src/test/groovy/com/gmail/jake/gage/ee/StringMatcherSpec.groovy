@@ -1,7 +1,5 @@
 package com.gmail.jake.gage.ee
 
-import com.sun.beans.decoder.FalseElementHandler;
-
 import spock.lang.Specification;
 
 class StringMatcherSpec extends Specification
