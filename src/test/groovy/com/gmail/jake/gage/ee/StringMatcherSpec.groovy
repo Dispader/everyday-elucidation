@@ -4,6 +4,29 @@ import spock.lang.Specification;
 
 class StringMatcherSpec extends Specification
 {
+    
+    def "Is a zero-length password valid?"() {
+        expect: StringMatcher.isValidPassword(("")) == false
+    }
+    def "Is a 1 character password valid?"() {
+        expect: StringMatcher.isValidPassword(("a"*1)) == false
+    }
+    def "Is an 7 character password valid?"() {
+        expect: StringMatcher.isValidPassword(("a"*7)) == false
+    }
+    def "Is an 8 character password valid?"() {
+        expect: StringMatcher.isValidPassword(("a"*8)) == true
+    }
+    def "Is an 9 character password valid?"() {
+        expect: StringMatcher.isValidPassword(("a"*9)) == true
+    }
+    def "Is a 125 character password valid?"() {
+        expect: StringMatcher.isValidPassword(("a"*125)) == true
+    }
+    def "Is a 126-character password valid?"() {
+        expect: StringMatcher.isValidPassword(("a"*126)) == false
+    }
+
     def "isPreciselyTrue(\"true\") == true"() {
         expect: StringMatcher.isPreciselyTrue("true") ==  true
     }

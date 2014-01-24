@@ -83,4 +83,14 @@ public class StringMatcher
     public static boolean lessThanThreeHundred(String input) {
         return input.matches("[12]?[0-9]{1,2}");
     }
+    
+    /**
+     * Returns <code>true</code> IFF the given string is a valid X.500 Internet password, <code>false</code> otherwise.
+     * 
+     * @param input a proposed X.500 Internet password
+     * @return <code>true</code> IFF the given string is a valid X.500 Internet password, <code>false</code> otherwise.
+     */
+    public static boolean isValidPassword(String input) {
+        return input.matches("^[a-zA-Z]{8,125}$");
+    }
 }
